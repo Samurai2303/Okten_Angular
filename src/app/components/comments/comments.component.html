@@ -1,0 +1,10 @@
+<div class="wrap">
+  <div>
+    <app-comment *ngFor="let comment of comments" [comment]="comment"
+                 (selectedComment)="selectComment($event)"></app-comment>
+  </div>
+  <div *ngIf="selectedComment">Selected comment: <br>
+    ID:{{selectedComment.id}} <br>
+    Name - {{selectedComment.name}} <br>
+    Body - {{selectedComment.body}}</div>
+</div>

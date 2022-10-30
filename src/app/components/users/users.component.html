@@ -1,0 +1,5 @@
+<app-user *ngFor="let user of users" [user]="user" (selectedUser)="selectUser($event)"></app-user>
+<hr>
+<div *ngIf="selectedUser">ID:{{selectedUser.id}} <br>
+Name - {{selectedUser.name}} <br>
+Email - {{selectedUser.email}}</div>

@@ -1,0 +1,6 @@
+<div>ID: {{comment.id}} <br>
+Name - {{comment.name}}</div>
+<button (click)="selectComment()">Select comment</button>
+<button routerLink="{{comment.id}}" [state]="comment">Show details</button>
+<button (click)="showDetails()">Show details using click</button>
+<hr>

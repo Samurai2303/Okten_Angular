@@ -1,0 +1,6 @@
+<div>ID: {{post.id}} <br>
+Title - {{post.title}}</div>
+<button (click)="selectPost()">Select Post</button>
+<button routerLink="{{post.id}}" [state]="{post}">Show details</button>
+<button (click)="showDetails()">Show details using </button>
+<hr>

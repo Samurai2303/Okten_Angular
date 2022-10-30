@@ -1,0 +1,5 @@
+<app-post *ngFor="let post of posts" (selectedPost)="selectPost($event)" [post]="post"></app-post>
+<div *ngIf="selectedPost">Selected Post: <br>
+ID: {{selectedPost.id}} <br>
+Title - {{selectedPost.title}} <br>
+Body - {{selectedPost.body}}</div>

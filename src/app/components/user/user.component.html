@@ -1,0 +1,6 @@
+<div>ID: {{user.id}} <br>
+  Name - {{user.name}}</div>
+<button (click)="selectUser()">Select user</button>
+<button routerLink="{{user.id}}" [state]="{user}">Show detail info</button>
+<button (click)="showDetails()">Show detail info using params</button>
+<hr>
