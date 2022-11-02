@@ -1,0 +1,4 @@
+<div class="wrap">
+  <app-comments (selectedComment)="selectComment($event)"></app-comments>
+  <app-selected-comment *ngIf="selectedComment" [comment]="selectedComment"></app-selected-comment>
+</div>

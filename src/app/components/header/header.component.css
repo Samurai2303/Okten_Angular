@@ -1,0 +1,18 @@
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  background: lightskyblue;
+  height: 50px;
+  margin: 0;
+}
+.wrap a{
+  background: cornflowerblue;
+  color: darkblue;
+  font-size: 20px;
+}
+
+.active {
+  background: darkblue;
+  color: white;
+  font-weight: 600;
+}

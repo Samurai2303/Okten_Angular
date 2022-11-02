@@ -1,0 +1,4 @@
+<div>
+  <app-posts (selectedPost)="selectPost($event)"></app-posts>
+  <app-selected-post *ngIf="selectedPost" [post]="selectedPost"></app-selected-post>
+</div>

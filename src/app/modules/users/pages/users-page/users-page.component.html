@@ -1,0 +1,4 @@
+<div class="wrap">
+  <app-users (selectedUser)="selectUser($event)"></app-users>
+  <app-selected-user *ngIf="selectedUser" [user]="selectedUser"></app-selected-user>
+</div>
