@@ -1,0 +1,22 @@
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 10px;
+  background: lightskyblue;
+}
+
+.wrap a {
+  padding: 5px;
+  background: cornflowerblue;
+  border-radius: 5px;
+  border: 3px solid darkblue;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.active {
+  background: darkblue;
+  color: white;
+  font-weight: 600;
+}

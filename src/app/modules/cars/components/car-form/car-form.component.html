@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <input type="text" placeholder="Model" formControlName="model">
+  <input type="number" placeholder="Price" formControlName="price">
+  <input type="number" placeholder="Year" formControlName="year">
+  <button [disabled]="form.invalid" (click)="save()">{{editedCar?'edit':'save'}}</button>
+</form>
+<div *ngIf="form.invalid">
+  <p *ngIf="form.controls['model']['errors'] && form.controls['model']['touched']">Smth wrong with model input</p>
+  <p *ngIf="form.controls['price']['errors'] && form.controls['price']['touched']">Smth wrong with price input</p>
+  <p *ngIf="form.controls['year']['errors'] && form.controls['year']['touched']">Smth wrong with year input</p>
+</div>
