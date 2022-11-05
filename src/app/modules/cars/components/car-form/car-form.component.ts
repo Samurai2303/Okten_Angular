@@ -43,8 +43,8 @@ export class CarFormComponent implements OnInit {
       this.carsService.create(this.form.value).subscribe(value => this.cars.push(value));
     } else {
       this.carsService.update(this.editedCar.id, this.form.value).subscribe(value => {
-        let index = this.cars.findIndex(car => car.id === this.editedCar?.id);
-        this.cars.splice(index, 1, this.form.value);
+        let car = this.cars.find(car => car.id === this.editedCar?.id);
+        Object.assign(car!, value);
       })
     }
     this.form.reset();

@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CarsLayoutComponent } from './layouts/cars-layout/cars-layout.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {CarsService} from "./services";
 
 
 @NgModule({
@@ -24,10 +25,16 @@ import {ReactiveFormsModule} from "@angular/forms";
     CarsLayoutComponent,
     HomePageComponent
   ],
+  exports: [
+    CarComponent
+  ],
   imports: [
     CommonModule,
     CarsRoutingModule,
     ReactiveFormsModule
+  ],
+  providers:[
+    CarsService
   ]
 })
 export class CarsModule { }

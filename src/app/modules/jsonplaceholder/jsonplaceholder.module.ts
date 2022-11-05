@@ -20,6 +20,7 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 import { JsonplaceholderLayoutComponent } from './layouts/jsonplaceholder-layout/jsonplaceholder-layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import {CommentsService, PostsService, UsersService} from "./services";
 
 
 @NgModule({
@@ -46,6 +47,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
   imports: [
     CommonModule,
     JsonplaceholderRoutingModule
+  ],
+  providers: [
+    PostsService, UsersService, CommentsService
   ]
 })
 export class JsonplaceholderModule { }

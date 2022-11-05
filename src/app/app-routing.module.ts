@@ -14,7 +14,9 @@ const routes: Routes = [
     path: 'jsonplaceholder',
     loadChildren: () => import('./modules/jsonplaceholder/jsonplaceholder.module').then(value => value.JsonplaceholderModule)
   },
-  {path: 'cars', loadChildren: () => import('./modules/cars/cars.module').then(value => value.CarsModule)}
+  {path: 'cars', loadChildren: () => import('./modules/cars/cars.module').then(value => value.CarsModule)},
+  {path:'carsLesson',
+    loadChildren: () => import('./modules/cars-lesson/cars-lesson.module').then(value => value.CarsLessonModule)}
 ];
 
 @NgModule({

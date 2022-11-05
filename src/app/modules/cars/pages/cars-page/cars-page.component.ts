@@ -8,7 +8,7 @@ import {ICar} from "../../interfaces";
 })
 export class CarsPageComponent implements OnInit {
   editedCar: ICar;
-  cars: ICar[];
+  cars:ICar[];
 
   constructor() { }
 
@@ -23,4 +23,5 @@ export class CarsPageComponent implements OnInit {
   carsF(cars: ICar[]) {
     this.cars = cars;
   }
+
 }
