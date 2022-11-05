@@ -2,13 +2,39 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
+import { CarsComponent } from './components/cars/cars.component';
+import { CarComponent } from './components/car/car.component';
+import { CarFormComponent } from './components/car-form/car-form.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { CarsPageComponent } from './pages/cars-page/cars-page.component';
+import { HeaderComponent } from './components/header/header.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarsComponent,
+    CarComponent,
+    CarFormComponent,
+    RegisterComponent,
+    RegisterFormComponent,
+    LoginComponent,
+    LoginFormComponent,
+    MainLayoutComponent,
+    CarsPageComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
