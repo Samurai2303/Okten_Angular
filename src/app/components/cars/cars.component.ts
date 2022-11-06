@@ -13,7 +13,9 @@ export class CarsComponent implements OnInit {
   constructor(private carsService:CarsService) { }
 
   ngOnInit(): void {
-    this.carsService.getAll().subscribe(value => this.cars = value);
+    this.carsService.getAll().subscribe((value) => {
+      this.cars = value.data;
+    });
   }
 
 }
