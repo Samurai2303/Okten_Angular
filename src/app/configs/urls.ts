@@ -9,7 +9,8 @@ let urls = {
   login: {
     login: auth,
     refresh: `${auth}/refresh`,
-  }
+  },
+  users: `${API}/users`
 };
 
 export {urls};

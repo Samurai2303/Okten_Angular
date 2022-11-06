@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AuthService} from "../../services";
+import {Router} from "@angular/router";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-login-form',
@@ -6,10 +10,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
+  form: FormGroup;
+  error = false;
 
-  constructor() { }
+
+  constructor(private authService:AuthService, private router:Router, private dialogRef:MatDialogRef<LoginFormComponent>) {
+    this._initForm();
+  }
 
   ngOnInit(): void {
   }
 
+  _initForm(): void {
+    this.form = new FormGroup({
+      username: new FormControl(null, [Validators.required]),
+      password: new FormControl(null, [Validators.required])
+    });
+  }
+
+
+  login():void {
+    this.authService.login(this.form.value).subscribe({
+      next: () => {
+        this.error = false;
+        this.router.navigate(['/cars'])
+        this.dialogRef.close();
+      },
+      error:() => {
+        this.error = true;
+      }
+    })
+
+  }
 }

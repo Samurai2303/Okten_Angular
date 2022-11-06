@@ -15,4 +15,20 @@ export class CarsService {
     return this.httpClient.get<ICar[]>(urls.cars);
   }
 
+  getById(id: number): Observable<ICar> {
+    return this.httpClient.get<ICar>(`${urls.cars}/${id}`);
+  }
+
+  create(car: ICar): Observable<ICar> {
+    return this.httpClient.post<ICar>(urls.cars, car);
+  }
+
+  update(id: number, car: ICar):Observable<ICar> {
+    return this.httpClient.put<ICar>(`${urls.cars}/${id}`, car);
+  }
+
+  delete(id: number): Observable<void> {
+    return this.httpClient.delete<void>(`${urls.cars}/${id}`);
+  }
+
 }

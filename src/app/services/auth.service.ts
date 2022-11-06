@@ -11,6 +11,7 @@ export class AuthService {
 
   private readonly _accessToken = 'access';
   private readonly _refreshToken = 'refresh';
+
   user = new BehaviorSubject<string | null>(null);
 
   constructor(private httpClient:HttpClient) { }
@@ -40,7 +41,7 @@ export class AuthService {
     return this.user.asObservable();
   }
 
-  private setTokens({refresh, access}: ITokens): void {
+  private setTokens({access, refresh}: ITokens): void {
     localStorage.setItem(this._accessToken, access);
     localStorage.setItem(this._refreshToken, refresh);
   }

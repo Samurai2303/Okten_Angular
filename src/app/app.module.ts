@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { CarsComponent } from './components/cars/cars.component';
 import { CarComponent } from './components/car/car.component';
@@ -15,6 +15,14 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { CarsPageComponent } from './pages/cars-page/cars-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import {AppRoutingModule} from "./app-routing.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MainInterceptor} from "./main.interceptor";
 
 @NgModule({
   declarations: [
@@ -34,9 +42,22 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      multi: true,
+      useClass:MainInterceptor
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

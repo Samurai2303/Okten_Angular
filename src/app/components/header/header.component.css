@@ -1,0 +1,17 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authBox {
+  display: flex;
+}
+
+.active {
+  color: red;
+  font-weight: 600;
+}
+
+.wrap p:hover {
+  cursor: pointer;
+}

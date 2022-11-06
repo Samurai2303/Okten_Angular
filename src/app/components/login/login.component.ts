@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {LoginFormComponent} from "../login-form/login-form.component";
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  template: '',
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matDialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.matDialog.open(LoginFormComponent, {
+      disableClose: true,
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms'
+    });
   }
-
 }
+

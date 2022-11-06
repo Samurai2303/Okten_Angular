@@ -1,1 +1,27 @@
-<p>login-form works!</p>
+<form [formGroup]="form">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <mat-error *ngIf="error">Username or password is incorrect</mat-error>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="username">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+      <button mat-raised-button color="primary" (click)="login()" [disabled]="form.invalid">Login</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+
