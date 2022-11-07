@@ -1,0 +1,10 @@
+.register {
+  display: flex;
+  padding: 5px;
+  gap: 10px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+}

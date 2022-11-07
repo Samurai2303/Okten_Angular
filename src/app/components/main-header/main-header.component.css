@@ -1,0 +1,10 @@
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  background: lightskyblue;
+}
+
+.active {
+  color: red;
+  font-weight: 600;
+}
