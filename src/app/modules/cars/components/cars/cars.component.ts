@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {ICar, IPaginatedData} from "../../interfaces";
 
 @Component({
   selector: 'app-cars',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  constructor() { }
+  cars: IPaginatedData<ICar>;
+
+  constructor(private activatedRoute:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
   }

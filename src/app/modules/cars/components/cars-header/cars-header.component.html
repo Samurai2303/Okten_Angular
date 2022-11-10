@@ -1,9 +1,9 @@
 <mat-toolbar class="wrap">
   <button routerLink="home">Home</button>
   <button routerLink="cars">Cars</button>
-  <div *ngIf="username;else name" class="register">
-  <button routerLink="/login">Login</button>
-  <button routerLink="/register">Register</button>
+  <div *ngIf="!username;else name" class="register">
+  <button routerLink="login">Login</button>
+  <button routerLink="register">Register</button>
   </div>
 </mat-toolbar>
 

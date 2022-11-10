@@ -23,6 +23,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -41,16 +44,19 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     SelectedCarComponent,
     CarsHomePageComponent
   ],
-  imports: [
-    CommonModule,
-    CarsRoutingModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatInputModule,
-    MatToolbarModule
-  ],
+    imports: [
+        CommonModule,
+        CarsRoutingModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatInputModule,
+        MatToolbarModule,
+        MatDialogModule,
+        MatExpansionModule,
+        MatPaginatorModule
+    ],
   providers: [
     AuthService,
     CarsService

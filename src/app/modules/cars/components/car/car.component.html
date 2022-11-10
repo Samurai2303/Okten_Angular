@@ -1,1 +1,24 @@
-<p>car works!</p>
+<mat-expansion-panel (opened)="panelOpenState = true"
+                     (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Car info
+    </mat-panel-title>
+    <mat-panel-description>
+      <div *ngIf="panelOpenState;else closed"></div>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div>
+    ID: {{car.id}} <br>
+    Model: {{car.model}} <br>
+    Price: {{car.price}} <br>
+    Year: {{car.year}}
+  </div>
+</mat-expansion-panel>
+
+
+<ng-template #closed>
+  <div>
+    ID: {{car.id}}
+  </div>
+</ng-template>
